@@ -47,3 +47,23 @@ class Solution:
             temp = []
             res.append(val)
         return res
+
+    def levelOrder1(self, root: TreeNode) -> List[List[int]]:
+        if not root:
+            return []
+        res = []
+        stack = [root]
+        temp = []
+        while stack:
+            val = []
+            while stack:
+                node = stack.pop(0)
+                val.append(node.val)
+                if node.left:
+                    temp.append(node.left)
+                if node.right:
+                    temp.append(node.right)
+            stack = temp
+            temp = []
+            res.append(val)
+        return res
