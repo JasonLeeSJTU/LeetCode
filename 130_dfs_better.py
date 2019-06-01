@@ -26,7 +26,7 @@ class Solution:
         # 从边界开始查找，对'O'的位置进行dfs搜索，都置为'S'
         # 最后遍历整个数组，为'S'的位置，变为'O'，其他所有位置，变为'X'
         if not board:
-            return 
+            return
         def dfs(board, i, j):
             if i >= 0 and i < len(board) and j >= 0 and j < len(board[0]) and board[i][j] == 'O':
                 board[i][j] = 'S'
